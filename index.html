@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creatieve workshops voor teamuitjes, feestjes en vriendenweekenden, door heel Nederland. Bij u op locatie of in ons eigen atelier. Geen ervaring nodig.">
+    <title>Aardblij Workshops</title>
+    <link rel="stylesheet" href="stijl.css">
+    <style>
+        
+
+        /* Kop met wisselende foto's */
+        .hero {
+            position: relative;
+            height: 600px;
+            width: 100%;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #999;
+            background-color: #e8e8e8;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Bolletjes onder de wisselende foto */
+        .carousel-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .carousel-dot {
+            position: relative;
+            width: 12px;
+            height: 12px;
+            padding: 0;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border: 2px solid white;
+        }
+
+        /* Groter klikvlak voor vingers, zonder dat het bolletje groter oogt */
+        .carousel-dot::after {
+            content: "";
+            position: absolute;
+            inset: -10px;
+        }
+
+        .carousel-dot:focus-visible {
+            outline: 2px solid #ffffff;
+            outline-offset: 4px;
+            box-shadow: 0 0 0 6px rgba(45, 80, 22, 0.6);
+        }
+
+        .carousel-dot.active {
+            background-color: white;
+        }
+
+        /* Ruimte per sectie */
+        section {
+            padding: 80px 60px;
+        }
+
+        /* Uitgelichte workshops */
+        .workshops {
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .workshops-footer {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .workshops-footer .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 16px;
+        }
+
+        .workshops-intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #000000;
+        }
+
+        .workshops-intro p {
+            margin-bottom: 20px;
+        }
+
+        .workshops-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .workshop-card {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .workshop-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .workshop-image {
+            width: 100%;
+            height: 220px;
+            background-color: #2d5016;
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .workshop-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .workshop-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #000000;
+        }
+
+        .workshop-description {
+            font-size: 0.95rem;
+            color: #000000;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .workshop-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #2d5016;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+            align-self: flex-start;
+            border: none;
+            cursor: pointer;
+        }
+
+        .workshop-link:hover {
+            background-color: #1f3810;
+        }
+
+        /* Over Aardblij Workshops */
+        .about {
+            background-color: #ffffff;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: #000000;
+        }
+
+        .about-content p {
+            font-size: 0.95rem;
+            color: #000000;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background-color: #2d5016;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            border-radius: 8px;
+        }
+
+        /* Klaar om te creëren */
+        .cta-section {
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 44px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            color: #000000;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* iPad liggend */
+        @media (max-width: 1024px) {
+            section {
+                padding: 70px 40px;
+            }
+
+            .workshops-grid {
+                gap: 1.5rem;
+            }
+
+            .about {
+                gap: 50px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .cta-section h2 {
+                font-size: 38px;
+            }
+        }
+
+        /* Telefoon en iPad staand */
+        @media (max-width: 768px) {
+
+            section {
+                padding: 40px 20px;
+            }
+
+            .hero {
+                height: 320px;
+            }
+
+            .section-title {
+                font-size: 28px;
+                margin-bottom: 30px;
+            }
+
+            .workshops-intro {
+                font-size: 0.9rem;
+                margin-bottom: 40px;
+            }
+
+            .workshops-intro p {
+                margin-bottom: 15px;
+                line-height: 1.6;
+            }
+
+            .workshops-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .workshop-card {
+                border-radius: 6px;
+            }
+
+            .workshop-image {
+                height: 180px;
+                font-size: 2.5rem;
+            }
+
+            .workshop-content {
+                padding: 1.25rem;
+            }
+
+            .workshop-title {
+                font-size: 1.1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .workshop-description {
+                font-size: 0.9rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .workshop-link {
+                padding: 0.65rem 1.25rem;
+                font-size: 13px;
+            }
+
+            .workshops-footer {
+                margin-top: 40px;
+            }
+
+            .workshops-footer .cta-button {
+                padding: 0.85rem 1.75rem;
+                font-size: 14px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 40px 20px;
+            }
+
+            .about-content h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .about-content p {
+                font-size: 0.9rem;
+                margin-bottom: 15px;
+                line-height: 1.6;
+            }
+
+            .about-image {
+                height: 300px;
+                font-size: 2.5rem;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .cta-section p {
+                font-size: 14px;
+                margin-bottom: 30px;
+                line-height: 1.6;
+            }
+
+            .cta-section .cta-button {
+                padding: 0.85rem 1.75rem;
+                font-size: 14px;
+            }
+
+        }
+
+        /* Kleine telefoon */
+        @media (max-width: 480px) {
+
+            section {
+                padding: 30px 15px;
+            }
+
+            .hero {
+                height: 240px;
+            }
+
+            .carousel-controls {
+                bottom: 20px;
+                gap: 10px;
+            }
+
+            .carousel-dot {
+                width: 10px;
+                height: 10px;
+            }
+
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 25px;
+            }
+
+            .workshops-intro {
+                font-size: 0.85rem;
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .workshop-image {
+                height: 150px;
+                font-size: 2rem;
+            }
+
+            .workshop-link {
+                padding: 0.6rem 1rem;
+                font-size: 12px;
+            }
+
+            .about {
+                padding: 30px 15px;
+            }
+
+            .about-content h2 {
+                font-size: 24px;
+            }
+
+            .about-image {
+                height: 250px;
+                font-size: 2rem;
+            }
+
+            .cta-section {
+                padding: 30px 15px;
+            }
+
+            .cta-section h2 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .cta-section p {
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+
+        }
+
+        /* Minder beweging: foto's wisselen niet vanzelf en vervagen niet */
+        @media (prefers-reduced-motion: reduce) {
+            .carousel-slide,
+            .carousel-dot {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigatie -->
+    <nav>
+        <a href="#home" class="logo" title="Terug naar boven" aria-label="Aardblij Workshops, terug naar boven">Aardblij Workshops</a>
+        <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="workshops.html">Workshops</a></li>
+                <li><a href="prijzen.html">Prijzen</a></li>
+                <li><a href="offerte.html">Offerte</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+            <button type="button" class="cta-button" data-aanvraag>Reserveer</button>
+        </div>
+    </nav>
+
+    <!-- Kop met wisselende foto's -->
+    <section class="hero" id="home">
+        <h1 class="visueel-verborgen">Aardblij Workshops: creatieve workshops door heel Nederland</h1>
+        <div class="carousel-container" aria-label="Foto's van onze workshops">
+            <div class="carousel-slide active">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect fill='%23d0d0d0' width='1200' height='600'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-size='24'%3EHeroafbeelding 1 - Workshop%3C/text%3E%3C/svg%3E" alt="Workshop 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect fill='%23c5c5c5' width='1200' height='600'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-size='24'%3EHeroafbeelding 2 - Creatieve ruimte%3C/text%3E%3C/svg%3E" alt="Workshop 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'%3E%3Crect fill='%23bababa' width='1200' height='600'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23999' font-size='24'%3EHeroafbeelding 3 - Creaties%3C/text%3E%3C/svg%3E" alt="Workshop 3">
+            </div>
+        </div>
+        <div class="carousel-controls" role="group" aria-label="Kies een foto">
+            <button type="button" class="carousel-dot active" aria-label="Foto 1 van 3" aria-current="true"></button>
+            <button type="button" class="carousel-dot" aria-label="Foto 2 van 3"></button>
+            <button type="button" class="carousel-dot" aria-label="Foto 3 van 3"></button>
+        </div>
+    </section>
+
+    <!-- Uitgelichte workshops -->
+    <section class="workshops" id="workshops">
+        <h2 class="section-title">Onze Workshops</h2>
+        <div class="workshops-intro">
+            <p>Ontdek Aardblij door heel Nederland! Wilt u een bedrijfsafdeling eens iets heel anders laten ervaren, wilt u een creatieve verjaardag, of zoekt u een ontspannende bezigheid als onderdeel van een vriendenweekend? Dan is één van onze populaire workshops misschien wel iets voor u!</p>
+            <p>Onze workshops worden hoog gewaardeerd door de deelnemers. Wij geven workshops in diverse stijlen: schilderen, kaarsen maken, mozaïeken en nog veel meer! Wij verzorgen onze workshops zowel bij u op locatie als in ons eigen atelier.</p>
+        </div>
+        <div class="workshops-grid">
+            <div class="workshop-card">
+                <div class="workshop-image">🕯️🍹</div>
+                <div class="workshop-content">
+                    <h3 class="workshop-title">Cocktail Kaarsen Maken</h3>
+                    <p class="workshop-description">Maak uw eigen geurende cocktail-geïnspireerde kaarsen. Leer alles over wax, geuren en kleurtoevoeging van onze experts. Perfecte handgemaakte geschenken!</p>
+                    <a href="cocktail-kaarsen.html" class="workshop-link">Meer informatie</a>
+                </div>
+            </div>
+
+            <div class="workshop-card">
+                <div class="workshop-image">🦙</div>
+                <div class="workshop-content">
+                    <h3 class="workshop-title">Schilderen tussen Alpacas</h3>
+                    <p class="workshop-description">Schilder in een unieke setting omringd door vriendelijke alpacas. Een rustige en inspirerende ervaring waar dieren en kunst samenkomen.</p>
+                    <a href="alpacas-schilderen.html" class="workshop-link">Meer informatie</a>
+                </div>
+            </div>
+
+            <div class="workshop-card">
+                <div class="workshop-image">💎</div>
+                <div class="workshop-content">
+                    <h3 class="workshop-title">Sieraden Maken</h3>
+                    <p class="workshop-description">Ontwerp en maak uw eigen unieke armbanden en kettingen met prachtige kralen. Onze ervaren makers leren u de mooiste kraaltechnieken.</p>
+                    <a href="workshops.html" class="workshop-link">Meer informatie</a>
+                </div>
+            </div>
+        </div>
+        <div class="workshops-footer">
+            <a href="workshops.html" class="cta-button">Ontdek Meer Workshops</a>
+        </div>
+    </section>
+
+    <!-- Over Aardblij Workshops -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>Over Aardblij Workshops</h2>
+            <p>Aardblij Workshops komt uit de Betuwe, het fruitgebied van Nederland. Sinds 2020 geven wij met veel plezier kunstworkshops door heel Nederland, zowel bij u op locatie als in ons eigen atelier.</p>
+            <p>Wij organiseren de perfecte creatieve ervaring voor uw teamuitje, feestje of vriendenweekend. Wij begrijpen dat elke groep uniek is, daarom passen wij onze workshops volledig aan uw wensen en doelstelling aan.</p>
+            <p>Wij koppelen ervaren kunstenaars die perfect passen bij uw groep. Wij bieden workshops voor alle niveaus, u hoeft geen ervaring te hebben. Ontdek wat u kunt creëren samen met gepassioneerde kunstenaars en beleef samen een dag vol plezier.</p>
+        </div>
+        <div class="about-image">🎨</div>
+    </section>
+
+    <!-- Klaar om te creëren -->
+    <section class="cta-section" id="contact">
+        <h2>Klaar om te creëren?</h2>
+        <p>Bekijk ons volledige assortiment aan workshops.</p>
+        <a href="workshops.html" class="cta-button">Workshops Bekijken</a>
+    </section>
+
+    <!-- Voettekst -->
+    <footer>
+        <p>&copy; 2026 Aardblij Workshops. Alle rechten voorbehouden.</p>
+        <div class="footer-links">
+            <span>Privacybeleid</span>
+            <span>Algemene Voorwaarden</span>
+            <a href="offerte.html">Contact</a>
+            <span>Instagram</span>
+        </div>
+    </footer>
+
+    <script>
+        // Wisselende foto bovenaan
+        // - wisselt elke 5 seconden
+        // - pauzeert zolang de muis erop staat of een bolletje de toetsenbordfocus heeft
+        // - wisselt niet vanzelf bij "minder beweging" in de instellingen van de bezoeker
+        // - bolletjes zijn knoppen: met Tab erheen, Enter/spatie kiest, pijltjes gaan naar de vorige/volgende foto
+        (function () {
+            const kop = document.querySelector('.hero');
+            const fotos = Array.from(document.querySelectorAll('.carousel-slide'));
+            const bolletjes = Array.from(document.querySelectorAll('.carousel-dot'));
+            const minderBeweging = window.matchMedia('(prefers-reduced-motion: reduce)');
+            const WACHTTIJD = 5000;
+            let huidige = 0;
+            let timer = null;
+            let muisErop = false;
+            let focusErin = false;
+
+            function toon(nummer) {
+                huidige = (nummer + fotos.length) % fotos.length;
+                fotos.forEach((foto, n) => {
+                    foto.classList.toggle('active', n === huidige);
+                    foto.setAttribute('aria-hidden', n === huidige ? 'false' : 'true');
+                });
+                bolletjes.forEach((bolletje, n) => {
+                    bolletje.classList.toggle('active', n === huidige);
+                    if (n === huidige) bolletje.setAttribute('aria-current', 'true');
+                    else bolletje.removeAttribute('aria-current');
+                });
+            }
+
+            function stop() {
+                clearInterval(timer);
+                timer = null;
+            }
+
+            function start() {
+                stop();
+                if (minderBeweging.matches || muisErop || focusErin || document.hidden) return;
+                timer = setInterval(() => toon(huidige + 1), WACHTTIJD);
+            }
+
+            // Pauzeren met de muis
+            kop.addEventListener('mouseenter', () => { muisErop = true; stop(); });
+            kop.addEventListener('mouseleave', () => { muisErop = false; start(); });
+
+            // Pauzeren zolang een bolletje de toetsenbordfocus heeft
+            kop.addEventListener('focusin', () => { focusErin = true; stop(); });
+            kop.addEventListener('focusout', e => {
+                if (!kop.contains(e.relatedTarget)) { focusErin = false; start(); }
+            });
+
+            // Bolletjes: klikken, Enter of spatie
+            bolletjes.forEach((bolletje, n) => {
+                bolletje.addEventListener('click', () => { toon(n); start(); });
+
+                // Pijltjestoetsen naar de vorige of volgende foto
+                bolletje.addEventListener('keydown', e => {
+                    let doel = null;
+                    if (e.key === 'ArrowRight') doel = huidige + 1;
+                    if (e.key === 'ArrowLeft') doel = huidige - 1;
+                    if (doel === null) return;
+                    e.preventDefault();
+                    toon(doel);
+                    bolletjes[huidige].focus();
+                });
+            });
+
+            // Opnieuw beoordelen als de instelling of het tabblad verandert
+            if (minderBeweging.addEventListener) minderBeweging.addEventListener('change', start);
+            document.addEventListener('visibilitychange', start);
+
+            toon(0);
+            start();
+        })();
+    </script>
+    <script src="site.js"></script>
+    <script src="reserveer.js"></script>
+</body>
+</html>
