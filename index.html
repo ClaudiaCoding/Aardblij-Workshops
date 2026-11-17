@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creatieve workshops voor teamuitjes, feestjes en vriendenweekenden, door heel Nederland. Bij u op locatie of in ons eigen atelier. Geen ervaring nodig.">
     <title>Aardblij Workshops</title>
-    <link rel="stylesheet" href="stijl.css?v=20261117-5">
+    <link rel="stylesheet" href="stijl.css?v=20261117-6">
     <link rel="canonical" href="https://aardblijworkshops.nl/">
     <meta name="theme-color" content="#2d5016">
 
@@ -70,6 +70,50 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* Dia met foto en tekst: zachte donkere overgang onderaan zodat de witte tekst leesbaar blijft */
+        .foto-dia::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.28) 38%, rgba(0, 0, 0, 0) 62%);
+            pointer-events: none;
+        }
+
+        .dia-tekst {
+            position: absolute;
+            left: 24px;
+            right: 24px;
+            bottom: 72px;
+            z-index: 1;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .dia-titel {
+            font-size: 44px;
+            font-weight: 700;
+            line-height: 1.15;
+            max-width: 22em;
+            margin: 0 auto 10px;
+        }
+
+        .dia-onder { font-size: 18px; }
+
+        /* Dia waar de mensen in het midden staan: tekst bovenaan, over de bomen */
+        .dia-boven::after {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.25) 30%, rgba(0, 0, 0, 0) 50%);
+        }
+
+        .dia-boven .dia-tekst { top: 28px; bottom: auto; }
+
+        /* Uitsnede van de groepsfoto: groep iets lager in beeld, zodat de tekst op de bomen valt */
+        .dia-boven img { object-position: 50% 30%; }
+
+        /* Heel brede schermen: iets lager uitsnijden zodat de voorste rij in beeld blijft */
+        @media (min-width: 1440px) {
+            .dia-boven img { object-position: 50% 45%; }
         }
 
         /* Tijdelijke plaatjes in de huisstijl, tot er echte foto's zijn */
@@ -237,6 +281,10 @@
             }
 
             .plaatshouder-beeld { font-size: 52px; margin-bottom: 18px; }
+            .dia-tekst { bottom: 52px; }
+            .dia-boven .dia-tekst { top: 18px; }
+            .dia-titel { font-size: 26px; margin-bottom: 6px; }
+            .dia-onder { font-size: 15px; }
             .plaatshouder-titel { font-size: 28px; }
             .plaatshouder-tekst { font-size: 15px; }
 
@@ -307,6 +355,10 @@
 
             .plaatshouder { padding-bottom: 30px; }
             .plaatshouder-beeld { font-size: 40px; margin-bottom: 12px; }
+            .dia-tekst { left: 15px; right: 15px; bottom: 44px; }
+            .dia-boven .dia-tekst { top: 14px; }
+            .dia-titel { font-size: 21px; }
+            .dia-onder { font-size: 13px; }
             .plaatshouder-titel { font-size: 22px; margin-bottom: 8px; }
             .plaatshouder-tekst { font-size: 13px; }
 
@@ -361,6 +413,9 @@
             .plaatshouder-beeld { font-size: 48px; margin-bottom: 12px; }
             .plaatshouder-titel { font-size: 32px; margin-bottom: 8px; }
             .plaatshouder-tekst { font-size: 16px; }
+            .dia-tekst { bottom: 52px; }
+            .dia-titel { font-size: 30px; }
+            .dia-onder { font-size: 16px; }
         }
 
         /* Minder beweging: foto's wisselen niet vanzelf en vervagen niet */
@@ -397,28 +452,28 @@
     <section class="hero" id="home">
         <h1 class="visueel-verborgen">Aardblij Workshops: creatieve workshops door heel Nederland</h1>
         <div class="carousel-container" aria-label="Foto's van onze workshops">
-            <!-- Echte foto erin zetten? Vervang de inhoud van een dia door bijvoorbeeld:
-                 <img src="images/workshop-1.jpg" alt="Deelnemers schilderen tussen de alpaca's">
-                 en haal de klassen "plaatshouder ..." van die dia weg. -->
-            <div class="carousel-slide active plaatshouder plaatshouder-groen">
-                <div>
-                    <span class="plaatshouder-beeld" aria-hidden="true">🎨🕯️💎</span>
-                    <p class="plaatshouder-titel">Creatieve workshops door heel Nederland</p>
-                    <p class="plaatshouder-tekst">Bij u op locatie of in ons eigen atelier</p>
+            <!-- Andere foto? Zet hem in de map images/ en pas src (bestandsnaam) en alt (korte beschrijving) aan.
+                 Valt het belangrijkste buiten beeld? Verschuif de uitsnede met style="object-position: 50% 30%"
+                 (eerste getal = links/rechts, tweede = boven/onder). -->
+            <div class="carousel-slide active foto-dia">
+                <img src="images/home-alpacas.jpg" alt="Deelnemers schilderen aan picknicktafels in de wei, met nieuwsgierige alpaca's vlak achter hen" width="1800" height="1200">
+                <div class="dia-tekst">
+                    <p class="dia-titel">Schilderen tussen de alpaca's</p>
+                    <p class="dia-onder">Op de Alpaca Farm in Haaften, in de Betuwe</p>
                 </div>
             </div>
-            <div class="carousel-slide plaatshouder plaatshouder-room">
-                <div>
-                    <span class="plaatshouder-beeld" aria-hidden="true">🦙</span>
-                    <p class="plaatshouder-titel">Schilderen tussen de alpaca's</p>
-                    <p class="plaatshouder-tekst">Op de Alpaca Farm in Haaften, in de Betuwe</p>
+            <div class="carousel-slide foto-dia dia-boven">
+                <img src="images/home-groep.jpg" alt="Een vrolijke groep in witte schorten en gekke pruiken toont trots de eigen schilderijen" width="1500" height="1125" loading="lazy">
+                <div class="dia-tekst">
+                    <p class="dia-titel">Creatieve workshops door heel Nederland</p>
+                    <p class="dia-onder">Bij u op locatie of in ons eigen atelier</p>
                 </div>
             </div>
-            <div class="carousel-slide plaatshouder plaatshouder-roze">
-                <div>
-                    <span class="plaatshouder-beeld" aria-hidden="true">🍹🕯️</span>
-                    <p class="plaatshouder-titel">Cocktailkaarsen, epoxy en nog veel meer</p>
-                    <p class="plaatshouder-tekst">Geen ervaring nodig, alle materialen inbegrepen</p>
+            <div class="carousel-slide foto-dia">
+                <img src="images/home-water.jpg" alt="Drie deelnemers in overalls schilderen samen op een groot zeil aan het water" width="1800" height="1350" loading="lazy">
+                <div class="dia-tekst">
+                    <p class="dia-titel">Geen ervaring nodig</p>
+                    <p class="dia-onder">Alle materialen zijn inbegrepen</p>
                 </div>
             </div>
         </div>
@@ -477,7 +532,7 @@
             <p>Wij organiseren de perfecte creatieve ervaring voor uw teamuitje, feestje of vriendenweekend. Wij begrijpen dat elke groep uniek is, daarom passen wij onze workshops volledig aan uw wensen en doelstelling aan.</p>
             <p>Wij koppelen u aan ervaren kunstenaars die perfect bij uw groep passen. Wij bieden workshops voor alle niveaus, u hoeft geen ervaring te hebben. Ontdek wat u kunt creëren samen met gepassioneerde kunstenaars en beleef samen een dag vol plezier.</p>
         </div>
-        <div class="about-image">🎨</div>
+        <div class="about-image"><img src="images/home-tekenen.jpg" alt="Een deelnemer tekent geconcentreerd een alpaca, met flessen verf op tafel" width="1200" height="800" loading="lazy"></div>
     </section>
 
     <!-- Klaar om te creëren -->
@@ -573,7 +628,7 @@
             start();
         })();
     </script>
-    <script src="site.js?v=20261117-5"></script>
-    <script src="reserveer.js?v=20261117-5"></script>
+    <script src="site.js?v=20261117-6"></script>
+    <script src="reserveer.js?v=20261117-6"></script>
 </body>
 </html>
