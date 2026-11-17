@@ -909,6 +909,37 @@ section { padding: 80px 60px; }
     color: #555555;
 }
 
+/* Vrijstaande foto (zonder achtergrond) op een roomkleurig vlak: hele foto zichtbaar, niet bijgesneden */
+.workshop-image.vrijstaand,
+.workshoppagina .hero-image.vrijstaand {
+    background: radial-gradient(circle at 70% 30%, #fffaf0 0%, #f4ecdc 60%, #e9dcc3 100%);
+}
+
+.workshop-image.vrijstaand img,
+.workshoppagina .hero-image.vrijstaand img {
+    object-fit: contain;
+    padding: 20px;
+}
+
+.workshoppagina .hero-image.vrijstaand img { padding: 40px; }
+
+/* Rij van drie vierkante foto's (bijv. materialen) */
+.workshoppagina .fotorij {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.workshoppagina .fotorij img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 /* Foto in de tekst van een workshoppagina */
 .workshoppagina .inhoud-foto {
     width: min(100%, 520px);
