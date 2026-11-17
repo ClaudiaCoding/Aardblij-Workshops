@@ -945,6 +945,17 @@ section { padding: 80px 60px; }
 
 .workshoppagina .fotorij.twee { grid-template-columns: repeat(2, 1fr); }
 
+.workshoppagina .fotorij figure { margin: 0; }
+
+/* Onderschrift onder een foto */
+.workshoppagina .fotorij figcaption {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    font-style: italic;
+    line-height: 1.6;
+    color: #555555;
+}
+
 .workshoppagina .fotorij img.vrijstaand {
     object-fit: contain;
     padding: 16px;
