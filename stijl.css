@@ -293,6 +293,9 @@ section { padding: 80px 60px; }
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+/* Bij een link naar een kaart (bijv. workshops.html#bosbaden) niet onder de menubalk verdwijnen */
+.workshop-card { scroll-margin-top: 110px; }
+
 .workshop-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);

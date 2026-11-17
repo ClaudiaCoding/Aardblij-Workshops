@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Vaste prijzen per groep, incl. btw: € 450 voor 1–10 deelnemers, € 600 voor 11–20 en € 750 voor 21–30. Kunstenaar en materialen inbegrepen.">
     <title>Prijzen · Aardblij Workshops</title>
-    <link rel="stylesheet" href="stijl.css?v=20261117-9">
+    <link rel="stylesheet" href="stijl.css?v=20261117-10">
     <link rel="canonical" href="https://aardblijworkshops.nl/prijzen.html">
     <meta name="theme-color" content="#2d5016">
 
@@ -169,14 +169,21 @@
             margin: 0 auto;
         }
 
-        .workshop-lijst li {
+        /* Elke box linkt naar de pagina (of kaart) van die workshop */
+        .workshop-lijst a {
+            display: inline-block;
             border: 1px solid #e0e0e0;
             border-radius: 6px;
             padding: 0.5rem 1rem;
             font-size: 14px;
             font-weight: 500;
+            color: #000000;
+            text-decoration: none;
             background: #ffffff;
+            transition: border-color 0.2s, color 0.2s;
         }
+
+        .workshop-lijst a:hover { border-color: #2d5016; color: #2d5016; }
 
         .workshops-footer {
             text-align: center;
@@ -354,18 +361,18 @@
             <h2 class="section-title">Geldt voor al onze workshops</h2>
             <p class="section-lead">Of u nu kiest voor schilderen, kaarsen maken of mozaïeken: de prijs hangt alleen af van de grootte van uw groep.</p>
             <ul class="workshop-lijst">
-                <li>Cocktail Kaarsen Maken</li>
-                <li>Epoxy Gieten</li>
-                <li>Schilderen tussen Alpacas</li>
-                <li>Schilderen in de Appelboomgaard</li>
-                <li>Schilderen in het Voedselbos</li>
-                <li>Bosbaden</li>
-                <li>Sieraden Maken</li>
-                <li>Mozaïeken</li>
-                <li>Bedazzelen</li>
-                <li>Verf Therapie</li>
-                <li>Fotoshoot met Telefoon</li>
-                <li>Kerstkransen en Kerststukjes Maken</li>
+                <li><a href="cocktail-kaarsen.html">Cocktail Kaarsen Maken</a></li>
+                <li><a href="epoxy-gieten.html">Epoxy Gieten</a></li>
+                <li><a href="alpacas-schilderen.html">Schilderen tussen Alpacas</a></li>
+                <li><a href="workshops.html#appelboomgaard">Schilderen in de Appelboomgaard</a></li>
+                <li><a href="workshops.html#voedselbos">Schilderen in het Voedselbos</a></li>
+                <li><a href="workshops.html#bosbaden">Bosbaden</a></li>
+                <li><a href="sieraden-maken.html">Sieraden Maken</a></li>
+                <li><a href="mozaieken.html">Mozaïeken</a></li>
+                <li><a href="bedazzelen.html">Bedazzelen</a></li>
+                <li><a href="workshops.html#verf-therapie">Verf Therapie</a></li>
+                <li><a href="fotoshoot.html">Fotoshoot met Telefoon</a></li>
+                <li><a href="kerstkransen.html">Kerstkransen en Kerststukjes Maken</a></li>
             </ul>
             <div class="workshops-footer">
                 <a href="workshops.html" class="cta-button groot">Workshops Bekijken</a>
@@ -393,7 +400,7 @@
         </div>
     </footer>
 
-    <script src="site.js?v=20261117-9"></script>
-    <script src="reserveer.js?v=20261117-9"></script>
+    <script src="site.js?v=20261117-10"></script>
+    <script src="reserveer.js?v=20261117-10"></script>
 </body>
 </html>
