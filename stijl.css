@@ -1,6 +1,10 @@
 /* =========================================================
    Aardblij Workshops · gedeelde stijl voor alle pagina's
    Kleuren en maten volgens de huisstijl (zie huisstijl.html)
+
+   Na een wijziging in stijl.css, site.js of reserveer.js: verhoog het
+   nummer achter ?v= in alle pagina's (bijv. ?v=20261117 -> ?v=20261118).
+   Anders gebruiken browsers soms nog de oude versie uit hun geheugen.
    ========================================================= */
 
 * {
