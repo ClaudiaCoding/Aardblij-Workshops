@@ -28,6 +28,25 @@ summary:focus-visible {
     border-radius: 2px;
 }
 
+/* Pixelart-iconen (in plaats van emoji's), gemaakt met tools/pixelicoon.py.
+   Ze zijn zo groot als de tekst eromheen, dus in een groot fotovlak worden ze vanzelf groot. */
+.pixel-icoon {
+    display: inline-block;
+    width: 1.1em;
+    height: 1.1em;
+    vertical-align: -0.18em;
+    margin-right: 0.1em;
+    image-rendering: pixelated;
+}
+
+/* In een groot vlak (plaatshouder voor een foto) iets groter */
+.workshop-image .pixel-icoon,
+.workshoppagina .hero-image .pixel-icoon {
+    width: 1.6em;
+    height: 1.6em;
+    margin: 0 0.05em;
+}
+
 /* Alleen voor Google en schermlezers, niet zichtbaar op de pagina */
 .visueel-verborgen {
     position: absolute;
@@ -317,9 +336,9 @@ section { padding: 80px 60px; }
 /* Echte foto's in fotovlakken: vullen het hele vlak, zonder vervorming.
    Werkt voor workshopkaarten, het fotovlak op workshoppagina's
    en het vlak naast "Over Aardblij Workshops" op de homepage. */
-.workshop-image img,
-.workshoppagina .hero-image img,
-.about-image img {
+.workshop-image img:not(.pixel-icoon),
+.workshoppagina .hero-image img:not(.pixel-icoon),
+.about-image img:not(.pixel-icoon) {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -918,13 +937,13 @@ section { padding: 80px 60px; }
     background: radial-gradient(circle at 70% 30%, #fffaf0 0%, #f4ecdc 60%, #e9dcc3 100%);
 }
 
-.workshop-image.vrijstaand img,
-.workshoppagina .hero-image.vrijstaand img {
+.workshop-image.vrijstaand img:not(.pixel-icoon),
+.workshoppagina .hero-image.vrijstaand img:not(.pixel-icoon) {
     object-fit: contain;
     padding: 20px;
 }
 
-.workshoppagina .hero-image.vrijstaand img { padding: 40px; }
+.workshoppagina .hero-image.vrijstaand img:not(.pixel-icoon) { padding: 40px; }
 
 /* Rij van drie vierkante foto's (bijv. materialen) */
 .workshoppagina .fotorij {
