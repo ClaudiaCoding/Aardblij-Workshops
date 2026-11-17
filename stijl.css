@@ -943,6 +943,8 @@ section { padding: 80px 60px; }
     border-radius: 8px;
 }
 
+.workshoppagina .fotorij.twee { grid-template-columns: repeat(2, 1fr); }
+
 .workshoppagina .fotorij img.vrijstaand {
     object-fit: contain;
     padding: 16px;
