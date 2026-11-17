@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creatieve workshops voor teamuitjes, feestjes en vriendenweekenden, door heel Nederland. Bij u op locatie of in ons eigen atelier. Geen ervaring nodig.">
     <title>Aardblij Workshops</title>
-    <link rel="stylesheet" href="stijl.css?v=20261117-4">
+    <link rel="stylesheet" href="stijl.css?v=20261117-5">
     <link rel="canonical" href="https://aardblijworkshops.nl/">
     <meta name="theme-color" content="#2d5016">
 
@@ -33,7 +33,9 @@
         /* Kop met wisselende foto's (van rand tot rand, zonder de ruimte van een gewone sectie) */
         .hero {
             position: relative;
-            height: 600px;
+            /* Nooit hoger dan het scherm minus de menubalk (ook bij inzoomen), maximaal 600 px */
+            height: clamp(260px, calc(100vh - 90px), 600px);
+            height: clamp(260px, calc(100svh - 90px), 600px);
             width: 100%;
             padding: 0;
             overflow: hidden;
@@ -201,6 +203,8 @@
         }
 
         .about-image {
+            position: relative;
+            overflow: hidden;
             width: 100%;
             height: 400px;
             background-color: #2d5016;
@@ -228,7 +232,8 @@
         @media (max-width: 768px) {
 
             .hero {
-                height: 320px;
+                height: clamp(220px, calc(100vh - 80px), 320px);
+                height: clamp(220px, calc(100svh - 80px), 320px);
             }
 
             .plaatshouder-beeld { font-size: 52px; margin-bottom: 18px; }
@@ -296,7 +301,8 @@
         @media (max-width: 480px) {
 
             .hero {
-                height: 240px;
+                height: clamp(200px, calc(100vh - 70px), 240px);
+                height: clamp(200px, calc(100svh - 70px), 240px);
             }
 
             .plaatshouder { padding-bottom: 30px; }
@@ -347,6 +353,14 @@
                 margin-bottom: 20px;
             }
 
+        }
+
+        /* Lage schermen (telefoon liggend, ingezoomd): tekst in de dia's iets kleiner */
+        @media (max-height: 500px) and (min-width: 769px) {
+            .plaatshouder { padding-bottom: 36px; }
+            .plaatshouder-beeld { font-size: 48px; margin-bottom: 12px; }
+            .plaatshouder-titel { font-size: 32px; margin-bottom: 8px; }
+            .plaatshouder-tekst { font-size: 16px; }
         }
 
         /* Minder beweging: foto's wisselen niet vanzelf en vervagen niet */
@@ -559,7 +573,7 @@
             start();
         })();
     </script>
-    <script src="site.js?v=20261117-4"></script>
-    <script src="reserveer.js?v=20261117-4"></script>
+    <script src="site.js?v=20261117-5"></script>
+    <script src="reserveer.js?v=20261117-5"></script>
 </body>
 </html>
