@@ -3,7 +3,7 @@
    Kleuren en maten volgens de huisstijl (zie huisstijl.html)
 
    Na een wijziging in stijl.css, site.js of reserveer.js: verhoog het
-   nummer achter ?v= in alle pagina's (bijv. ?v=20261117 -> ?v=20261118).
+   nummer achter ?v= in alle pagina's (bijv. ?v=20261117 -> ?v=20261117-2 -> ?v=20261118).
    Anders gebruiken browsers soms nog de oude versie uit hun geheugen.
    ========================================================= */
 
@@ -853,6 +853,20 @@ section { padding: 80px 60px; }
     line-height: 1.8;
     color: #555555;
 }
+
+/* Praktische informatie in het kort (opsomming in het uitlichtkader) */
+.workshoppagina .praktisch-lijst {
+    margin: 8px 0 15px;
+    padding-left: 20px;
+}
+
+.workshoppagina .praktisch-lijst li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555555;
+}
+
+.workshoppagina .praktisch-lijst li::marker { color: #2d5016; }
 
 .workshoppagina .partner-note {
     margin-top: 20px;
