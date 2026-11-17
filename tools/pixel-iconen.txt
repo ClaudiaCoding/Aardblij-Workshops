@@ -23,18 +23,18 @@ S #d7dde2
 c #2fb5a5
 
 == palet 🎨
-...kkkkkk...
-..kNNNNNNk..
-.kNrNNNyNNk.
-kNNNNNNNNNNk
-kNbNNNNNNcNk
-kNNNNNkkNNNk
-kNNNNk..kNk.
-kNpNNNkkNNk.
-kNNNNNNNNNk.
-.kNmNNNNNk..
-..kkNNNNk...
-....kkkk....
+...nnnnnn...
+.nnNNNNNNnn.
+nNNrrNNyyNNn
+nNNrrNNyyNNn
+nNNNNnnNNbbn
+nNccn..nNbbn
+nNccNnnNnnn.
+nNNNNNNn....
+nNmmNNNn....
+nNmmNNNNnn..
+.nNNNNNNNNn.
+..nnnnnnnn..
 
 == info ℹ️
 .gggggggggg.
