@@ -454,7 +454,8 @@
         <div class="carousel-container" aria-label="Foto's van onze workshops">
             <!-- Andere foto? Zet hem in de map images/ en pas src (bestandsnaam) en alt (korte beschrijving) aan.
                  Valt het belangrijkste buiten beeld? Verschuif de uitsnede met style="object-position: 50% 30%"
-                 (eerste getal = links/rechts, tweede = boven/onder). -->
+                 (eerste getal = links/rechts, tweede = boven/onder).
+                 De dia met data-eind is de foto waarop de dia's stoppen. -->
             <div class="carousel-slide active foto-dia">
                 <img src="images/home-alpacas.jpg" alt="Deelnemers schilderen aan picknicktafels in de wei, met nieuwsgierige alpaca's vlak achter hen" width="1800" height="1200">
                 <div class="dia-tekst">
@@ -462,7 +463,7 @@
                     <p class="dia-onder">Op de Alpaca Farm in Haaften, in de Betuwe</p>
                 </div>
             </div>
-            <div class="carousel-slide foto-dia dia-boven">
+            <div class="carousel-slide foto-dia dia-boven" data-eind>
                 <img src="images/home-groep.jpg" alt="Een vrolijke groep in witte schorten en gekke pruiken toont trots de eigen schilderijen" width="1500" height="1125" loading="lazy">
                 <div class="dia-tekst">
                     <p class="dia-titel">Creatieve workshops door heel Nederland</p>
@@ -555,7 +556,7 @@
 
     <script>
         // Wisselende foto bovenaan
-        // - wisselt elke 2 seconden
+        // - wisselt elke 2 seconden, draait 2 rondes en stopt dan op de dia met data-eind
         // - pauzeert zolang de muis erop staat of een bolletje de toetsenbordfocus heeft
         // - wisselt niet vanzelf bij "minder beweging" in de instellingen van de bezoeker
         // - bolletjes zijn knoppen: met Tab erheen, Enter/spatie kiest, pijltjes gaan naar de vorige/volgende foto
@@ -565,7 +566,11 @@
             const bolletjes = Array.from(document.querySelectorAll('.carousel-dot'));
             const minderBeweging = window.matchMedia('(prefers-reduced-motion: reduce)');
             const WACHTTIJD = 2000;
+            const RONDES = 2;
+            const EIND = Math.max(0, fotos.findIndex(foto => foto.hasAttribute('data-eind')));
             let huidige = 0;
+            let rondes = 0;
+            let klaar = false;
             let timer = null;
             let muisErop = false;
             let focusErin = false;
@@ -588,10 +593,21 @@
                 timer = null;
             }
 
+            // Volgende dia; na 2 volledige rondes stoppen op de einddia
+            function volgende() {
+                const nieuw = (huidige + 1) % fotos.length;
+                if (nieuw === 0) rondes++;
+                toon(nieuw);
+                if (rondes >= RONDES && huidige === EIND) {
+                    klaar = true;
+                    stop();
+                }
+            }
+
             function start() {
                 stop();
-                if (minderBeweging.matches || muisErop || focusErin || document.hidden) return;
-                timer = setInterval(() => toon(huidige + 1), WACHTTIJD);
+                if (klaar || minderBeweging.matches || muisErop || focusErin || document.hidden) return;
+                timer = setInterval(volgende, WACHTTIJD);
             }
 
             // Pauzeren met de muis
@@ -624,7 +640,8 @@
             if (minderBeweging.addEventListener) minderBeweging.addEventListener('change', start);
             document.addEventListener('visibilitychange', start);
 
-            toon(0);
+            // Bij "minder beweging" meteen de einddia tonen
+            toon(minderBeweging.matches ? EIND : 0);
             start();
         })();
     </script>
