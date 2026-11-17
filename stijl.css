@@ -909,6 +909,19 @@ section { padding: 80px 60px; }
     color: #555555;
 }
 
+/* Foto in de tekst van een workshoppagina */
+.workshoppagina .inhoud-foto {
+    width: min(100%, 520px);
+    margin: 40px auto;
+}
+
+.workshoppagina .inhoud-foto img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 /* Afsluitend reserveerblok */
 .workshoppagina .cta-section {
     margin-top: 80px;
