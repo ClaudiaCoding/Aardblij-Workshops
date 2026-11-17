@@ -56,9 +56,20 @@ nav {
     color: #000000;
     text-decoration: none;
     transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
 }
 
 .logo:hover { color: #2d5016; }
+
+/* Aardbeitje naast de naam */
+.logo-beeld {
+    display: block;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+}
 
 .nav-links {
     display: flex;
@@ -196,7 +207,8 @@ footer p {
 /* ---------- Kleine telefoon ---------- */
 @media (max-width: 480px) {
     nav { padding: 0.75rem 1rem; }
-    .logo { font-size: 1.1rem; }
+    .logo { font-size: 1.1rem; gap: 0.45rem; }
+    .logo-beeld { width: 36px; height: 36px; }
     .cta-button.groot { padding: 0.85rem 1.75rem; font-size: 14px; }
     footer { padding: 30px 15px; }
     footer p { font-size: 12px; }
