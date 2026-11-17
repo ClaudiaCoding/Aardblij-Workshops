@@ -555,7 +555,7 @@
 
     <script>
         // Wisselende foto bovenaan
-        // - wisselt elke 5 seconden
+        // - wisselt elke 2 seconden
         // - pauzeert zolang de muis erop staat of een bolletje de toetsenbordfocus heeft
         // - wisselt niet vanzelf bij "minder beweging" in de instellingen van de bezoeker
         // - bolletjes zijn knoppen: met Tab erheen, Enter/spatie kiest, pijltjes gaan naar de vorige/volgende foto
@@ -564,7 +564,7 @@
             const fotos = Array.from(document.querySelectorAll('.carousel-slide'));
             const bolletjes = Array.from(document.querySelectorAll('.carousel-dot'));
             const minderBeweging = window.matchMedia('(prefers-reduced-motion: reduce)');
-            const WACHTTIJD = 5000;
+            const WACHTTIJD = 2000;
             let huidige = 0;
             let timer = null;
             let muisErop = false;
