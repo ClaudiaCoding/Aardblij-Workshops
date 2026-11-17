@@ -19,7 +19,7 @@ window.AARDBLIJ = {
         'Bosbaden',
         'Sieraden Maken',
         'Mozaïeken',
-        'Aanstekers Bedazzelen',
+        'Bedazzelen',
         'Verf Therapie',
         'Fotoshoot met Telefoon',
         'Kerstkransen en Kerststukjes Maken'
