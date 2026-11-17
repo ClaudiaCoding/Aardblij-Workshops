@@ -3,21 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vaste prijzen per groep, excl. btw: € 450 voor 1–10 deelnemers, € 600 voor 11–20 en € 750 voor 21–30. Kunstenaar en materialen inbegrepen.">
+    <meta name="description" content="Vaste prijzen per groep, incl. btw: € 450 voor 1–10 deelnemers, € 600 voor 11–20 en € 750 voor 21–30. Kunstenaar en materialen inbegrepen.">
     <title>Prijzen · Aardblij Workshops</title>
     <link rel="stylesheet" href="stijl.css">
+    <link rel="canonical" href="https://aardblijworkshops.nl/prijzen.html">
+    <meta name="theme-color" content="#2d5016">
+
+    <!-- Icoontje in het browsertabblad en op het beginscherm van telefoons -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="images/icoon-192.png" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Voorbeeld bij delen via WhatsApp, Facebook, LinkedIn enz. -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aardblij Workshops">
+    <meta property="og:locale" content="nl_NL">
+    <meta property="og:title" content="Prijzen · Aardblij Workshops">
+    <meta property="og:description" content="Vaste prijzen per groep, incl. btw: € 450 voor 1–10 deelnemers, € 600 voor 11–20 en € 750 voor 21–30. Kunstenaar en materialen inbegrepen.">
+    <meta property="og:url" content="https://aardblijworkshops.nl/prijzen.html">
+    <meta property="og:image" content="https://aardblijworkshops.nl/images/deelafbeelding.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Aardblij Workshops: creatieve workshops door heel Nederland">
+    <meta name="twitter:card" content="summary_large_image">
     <style>
-        
-
-        /* Secties */
-        section {
-            padding: 80px 60px;
-        }
-
-        .inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        /* Alleen voor deze pagina. Gedeelde stijl (titel, intro, kaders, afsluitend blok) staat in stijl.css */
 
         .section-title {
             font-size: 40px;
@@ -26,24 +36,6 @@
             text-align: center;
             margin-bottom: 30px;
         }
-
-        .page-title {
-            font-size: 44px;
-            font-weight: 700;
-            line-height: 1.15;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .intro {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        .intro p + p { margin-top: 20px; }
 
         .section-lead {
             max-width: 700px;
@@ -142,7 +134,7 @@
             margin-top: 30px;
         }
 
-        /* Inbegrepen */
+        /* Inbegrepen: witte kaarten op een grijze achtergrond */
         .inbegrepen { background-color: #fafafa; border-block: 1px solid #e0e0e0; }
 
         .feature-grid {
@@ -153,24 +145,7 @@
             margin: 0 auto;
         }
 
-        .feature-card {
-            padding: 1.25rem 1.5rem;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            background-color: #ffffff;
-        }
-
-        .feature-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .feature-card p {
-            font-size: 0.9rem;
-            color: #555555;
-            line-height: 1.7;
-        }
+        .feature-card { background-color: #ffffff; }
 
         /* Locatie */
         .locatie-grid {
@@ -179,26 +154,6 @@
             gap: 2rem;
             max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .highlight-box {
-            background-color: #f9f9f9;
-            border-left: 4px solid #2d5016;
-            padding: 1.5rem 1.75rem;
-            border-radius: 4px;
-        }
-
-        .highlight-box h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #2d5016;
-            margin-bottom: 10px;
-        }
-
-        .highlight-box p {
-            font-size: 0.95rem;
-            color: #555555;
-            line-height: 1.8;
         }
 
         .highlight-box p + p { margin-top: 10px; }
@@ -228,68 +183,29 @@
             margin-top: 40px;
         }
 
-        /* CTA */
-        .cta-section { text-align: center; }
-
-        .cta-section h2 {
-            font-size: 44px;
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 30px;
-        }
-
-        .cta-section p {
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        .cta-knoppen {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
         /* iPad liggend */
         @media (max-width: 1024px) {
-            section { padding: 70px 40px; }
-            .prijs-section { padding-top: 0; }
             .prijs-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
             .section-title { font-size: 34px; }
-            .page-title, .cta-section h2 { font-size: 38px; }
         }
 
         /* Telefoon en iPad staand */
         @media (max-width: 768px) {
-
-            section { padding: 40px 20px; }
-            .prijs-section { padding-top: 0; }
-
-            .page-title, .section-title, .cta-section h2 { font-size: 28px; margin-bottom: 20px; }
-            .intro, .section-lead { font-size: 0.9rem; }
-            .section-lead { margin-bottom: 30px; }
+            .section-title { font-size: 28px; margin-bottom: 20px; }
+            .section-lead { font-size: 0.9rem; margin-bottom: 30px; }
 
             .prijs-grid, .feature-grid, .locatie-grid { grid-template-columns: 1fr; gap: 20px; }
-            .prijs-card, .feature-card { border-radius: 6px; }
+            .prijs-card { border-radius: 6px; }
             .bedrag { font-size: 34px; }
-
-            .cta-section p { font-size: 14px; margin-bottom: 30px; }
-
         }
 
         /* Kleine telefoon */
         @media (max-width: 480px) {
-
-            section { padding: 30px 15px; }
-            .prijs-section { padding-top: 0; }
-            .page-title, .section-title, .cta-section h2 { font-size: 24px; }
-            .intro, .section-lead { font-size: 0.85rem; }
-
+            .section-title { font-size: 24px; }
+            .section-lead { font-size: 0.85rem; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            
             .prijs-card:hover { transform: none; }
         }
     </style>
@@ -297,7 +213,7 @@
 <body>
     <!-- Navigatie -->
     <nav>
-        <a href="#top" class="logo" title="Terug naar boven" aria-label="Aardblij Workshops, terug naar boven"><img src="images/Kawaii%20Pixel%20Strawberry%20on%20White.png" alt="" class="logo-beeld" width="44" height="44"><span>Aardblij Workshops</span></a>
+        <a href="#top" class="logo" title="Terug naar boven" aria-label="Aardblij Workshops, terug naar boven"><img src="images/aardbei.png" alt="" class="logo-beeld" width="44" height="44"><span>Aardblij Workshops</span></a>
         <button class="nav-toggle" aria-label="Menu openen" aria-expanded="false">
             <span></span>
             <span></span>
@@ -321,7 +237,7 @@
             <h1 class="page-title">Prijzen</h1>
             <div class="intro">
                 <p>Al onze workshops worden gegeven door ervaren kunstenaars, met materialen van goede kwaliteit en volledig verzorgd. Regelt u de ruimte en de catering, dan zorgen wij voor de rest. Wilt u nog meer uit handen geven? Dat regelen wij graag voor u.</p>
-                <p>Onderstaande prijzen gelden voor al onze workshops, zowel bij u op locatie als in ons eigen atelier. De prijzen zijn exclusief btw en inclusief al het andere, bij boeking via het offerteformulier op deze website.</p>
+                <p>Onderstaande prijzen gelden voor al onze workshops, zowel bij u op locatie als in ons eigen atelier. De prijzen zijn inclusief btw en al het andere, bij boeking via het offerteformulier op deze website.</p>
             </div>
         </div>
     </section>
@@ -337,7 +253,7 @@
                     </div>
                     <div class="prijs-body">
                         <span class="bedrag">€ 450</span>
-                        <span class="btw">per workshop, excl. btw</span>
+                        <span class="btw">per workshop, incl. btw</span>
                         <p class="uitleg">Ideaal voor een verjaardag, een vriendenweekend of een klein team.</p>
                         <a href="offerte.html" class="cta-button">Offerte Aanvragen</a>
                     </div>
@@ -350,7 +266,7 @@
                     </div>
                     <div class="prijs-body">
                         <span class="bedrag">€ 600</span>
-                        <span class="btw">per workshop, excl. btw</span>
+                        <span class="btw">per workshop, incl. btw</span>
                         <p class="uitleg">Voor een afdeling of een groot familiefeest. Ook mogelijk in ons eigen atelier.</p>
                         <a href="offerte.html" class="cta-button">Offerte Aanvragen</a>
                     </div>
@@ -363,7 +279,7 @@
                     </div>
                     <div class="prijs-body">
                         <span class="bedrag">€ 750</span>
-                        <span class="btw">per workshop, excl. btw</span>
+                        <span class="btw">per workshop, incl. btw</span>
                         <p class="uitleg">Voor een teamuitje met de hele organisatie, bij u op locatie.</p>
                         <a href="offerte.html" class="cta-button">Offerte Aanvragen</a>
                     </div>

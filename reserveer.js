@@ -2,7 +2,8 @@
    Aardblij Workshops · Reserveer-pop-up
    Elke knop met data-aanvraag opent de pop-up.
    Met data-workshop="Naam" staat die workshop al ingevuld.
-   Het Formspree-adres staat in site.js (window.AARDBLIJ.formspree).
+   Het Formspree-adres en de lijst met workshops staan in site.js
+   (window.AARDBLIJ.formspree en window.AARDBLIJ.workshops).
    ========================================================= */
 
 (function () {
@@ -24,19 +25,7 @@
                     <label for="f-workshop">Welke workshop?</label>
                     <select id="f-workshop" name="Workshop" required>
                         <option value="" selected disabled>Kies een workshop</option>
-                        <option>Cocktail Kaarsen Maken</option>
-                        <option>Epoxy Gieten</option>
-                        <option>Schilderen tussen Alpacas</option>
-                        <option>Schilderen in de Appelboomgaard</option>
-                        <option>Schilderen in het Voedselbos</option>
-                        <option>Bosbaden</option>
-                        <option>Sieraden Maken</option>
-                        <option>Mozaïeken</option>
-                        <option>Aanstekers Bedazzelen</option>
-                        <option>Verf Therapie</option>
-                        <option>Fotoshoot met Telefoon</option>
-                        <option>Kerstkransen en Kerststukjes Maken</option>
-                        <option>Anders, of ik weet het nog niet</option>
+                        <!-- De workshops komen uit site.js (window.AARDBLIJ.workshops) -->
                     </select>
                     <p class="fout" id="fout-workshop" hidden></p>
                 </div>
@@ -126,6 +115,9 @@
 </dialog>
 <div class="bevestiging" id="bevestiging" role="status" aria-live="polite"></div>
 `);
+
+    // Workshops in de keuzelijst zetten (lijst staat in site.js)
+    window.AARDBLIJ.vulWorkshops(document.getElementById('f-workshop'));
 
     const dialoog = document.getElementById('aanvraag');
     const formulier = document.getElementById('aanvraag-form');
