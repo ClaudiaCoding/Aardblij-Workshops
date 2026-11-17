@@ -956,6 +956,12 @@ section { padding: 80px 60px; }
     color: #555555;
 }
 
+/* Telefoon: kleiner onderschrift en minder ruimte tussen de foto's */
+@media (max-width: 480px) {
+    .workshoppagina .fotorij { gap: 8px; }
+    .workshoppagina .fotorij figcaption { font-size: 0.75rem; line-height: 1.4; margin-top: 6px; }
+}
+
 .workshoppagina .fotorij img.vrijstaand {
     object-fit: contain;
     padding: 16px;
