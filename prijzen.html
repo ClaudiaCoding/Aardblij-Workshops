@@ -7,17 +7,7 @@
     <title>Prijzen · Aardblij Workshops</title>
     <link rel="stylesheet" href="stijl.css">
     <style>
-        
-
-        /* Secties */
-        section {
-            padding: 80px 60px;
-        }
-
-        .inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        /* Alleen voor deze pagina. Gedeelde stijl (titel, intro, kaders, afsluitend blok) staat in stijl.css */
 
         .section-title {
             font-size: 40px;
@@ -26,24 +16,6 @@
             text-align: center;
             margin-bottom: 30px;
         }
-
-        .page-title {
-            font-size: 44px;
-            font-weight: 700;
-            line-height: 1.15;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .intro {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
-
-        .intro p + p { margin-top: 20px; }
 
         .section-lead {
             max-width: 700px;
@@ -142,7 +114,7 @@
             margin-top: 30px;
         }
 
-        /* Inbegrepen */
+        /* Inbegrepen: witte kaarten op een grijze achtergrond */
         .inbegrepen { background-color: #fafafa; border-block: 1px solid #e0e0e0; }
 
         .feature-grid {
@@ -153,24 +125,7 @@
             margin: 0 auto;
         }
 
-        .feature-card {
-            padding: 1.25rem 1.5rem;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            background-color: #ffffff;
-        }
-
-        .feature-card h3 {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .feature-card p {
-            font-size: 0.9rem;
-            color: #555555;
-            line-height: 1.7;
-        }
+        .feature-card { background-color: #ffffff; }
 
         /* Locatie */
         .locatie-grid {
@@ -179,26 +134,6 @@
             gap: 2rem;
             max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .highlight-box {
-            background-color: #f9f9f9;
-            border-left: 4px solid #2d5016;
-            padding: 1.5rem 1.75rem;
-            border-radius: 4px;
-        }
-
-        .highlight-box h3 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: #2d5016;
-            margin-bottom: 10px;
-        }
-
-        .highlight-box p {
-            font-size: 0.95rem;
-            color: #555555;
-            line-height: 1.8;
         }
 
         .highlight-box p + p { margin-top: 10px; }
@@ -228,68 +163,29 @@
             margin-top: 40px;
         }
 
-        /* CTA */
-        .cta-section { text-align: center; }
-
-        .cta-section h2 {
-            font-size: 44px;
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 30px;
-        }
-
-        .cta-section p {
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        .cta-knoppen {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
         /* iPad liggend */
         @media (max-width: 1024px) {
-            section { padding: 70px 40px; }
-            .prijs-section { padding-top: 0; }
             .prijs-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
             .section-title { font-size: 34px; }
-            .page-title, .cta-section h2 { font-size: 38px; }
         }
 
         /* Telefoon en iPad staand */
         @media (max-width: 768px) {
-
-            section { padding: 40px 20px; }
-            .prijs-section { padding-top: 0; }
-
-            .page-title, .section-title, .cta-section h2 { font-size: 28px; margin-bottom: 20px; }
-            .intro, .section-lead { font-size: 0.9rem; }
-            .section-lead { margin-bottom: 30px; }
+            .section-title { font-size: 28px; margin-bottom: 20px; }
+            .section-lead { font-size: 0.9rem; margin-bottom: 30px; }
 
             .prijs-grid, .feature-grid, .locatie-grid { grid-template-columns: 1fr; gap: 20px; }
-            .prijs-card, .feature-card { border-radius: 6px; }
+            .prijs-card { border-radius: 6px; }
             .bedrag { font-size: 34px; }
-
-            .cta-section p { font-size: 14px; margin-bottom: 30px; }
-
         }
 
         /* Kleine telefoon */
         @media (max-width: 480px) {
-
-            section { padding: 30px 15px; }
-            .prijs-section { padding-top: 0; }
-            .page-title, .section-title, .cta-section h2 { font-size: 24px; }
-            .intro, .section-lead { font-size: 0.85rem; }
-
+            .section-title { font-size: 24px; }
+            .section-lead { font-size: 0.85rem; }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            
             .prijs-card:hover { transform: none; }
         }
     </style>

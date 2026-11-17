@@ -7,33 +7,7 @@
     <title>Veelgestelde vragen · Aardblij Workshops</title>
     <link rel="stylesheet" href="stijl.css">
     <style>
-        
-
-        /* Secties */
-        section {
-            padding: 80px 60px;
-        }
-
-        .inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .page-title {
-            font-size: 44px;
-            font-weight: 700;
-            line-height: 1.15;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .intro {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 0.95rem;
-            line-height: 1.8;
-        }
+        /* Alleen voor deze pagina. Gedeelde stijl (titel, intro, afsluitend blok) staat in stijl.css */
 
         /* Onderwerpen */
         .onderwerpen {
@@ -146,16 +120,14 @@
 
         .antwoord .cta-button:hover { color: #ffffff; }
 
-        /* Contactkader */
+        /* Contactkader: wit, gecentreerd en iets ruimer dan het gedeelde uitlichtkader */
         .contact-section { background-color: #fafafa; border-block: 1px solid #e0e0e0; }
 
         .highlight-box {
             max-width: 800px;
             margin: 0 auto;
             background-color: #ffffff;
-            border-left: 4px solid #2d5016;
             padding: 1.75rem 2rem;
-            border-radius: 4px;
         }
 
         .highlight-box h2 {
@@ -163,12 +135,6 @@
             font-weight: 600;
             color: #2d5016;
             margin-bottom: 10px;
-        }
-
-        .highlight-box p {
-            font-size: 0.95rem;
-            color: #555555;
-            line-height: 1.8;
         }
 
         .highlight-box .mail {
@@ -182,44 +148,8 @@
 
         .highlight-box .mail:hover { color: #2d5016; }
 
-        /* CTA */
-        .cta-section { text-align: center; }
-
-        .cta-section h2 {
-            font-size: 44px;
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 30px;
-        }
-
-        .cta-section p {
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        .cta-knoppen {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-        }
-
-        /* iPad liggend */
-        @media (max-width: 1024px) {
-            section { padding: 70px 40px; }
-            .faq-section { padding-top: 0; }
-            .page-title, .cta-section h2 { font-size: 38px; }
-        }
-
         /* Telefoon en iPad staand */
         @media (max-width: 768px) {
-
-            section { padding: 40px 20px; }
-            .faq-section { padding-top: 0; }
-
-            .page-title, .cta-section h2 { font-size: 28px; margin-bottom: 20px; }
-            .intro { font-size: 0.9rem; }
             .onderwerpen { margin-top: 30px; }
 
             .groep-titel { font-size: 24px; }
@@ -229,19 +159,6 @@
             .antwoord { padding: 0 1.15rem 1.2rem; font-size: 0.9rem; }
 
             .highlight-box { padding: 1.5rem; }
-
-            .cta-section p { font-size: 14px; margin-bottom: 30px; }
-
-        }
-
-        /* Kleine telefoon */
-        @media (max-width: 480px) {
-
-            section { padding: 30px 15px; }
-            .faq-section { padding-top: 0; }
-            .page-title, .cta-section h2 { font-size: 24px; }
-            .intro { font-size: 0.85rem; }
-
         }
     </style>
 </head>
