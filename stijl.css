@@ -75,22 +75,32 @@ nav {
     border-bottom: 1px solid #e0e0e0;
 }
 
+/* Logo: de aardbei gaat naar de homepage, de naam terug naar boven */
 .logo {
     justify-self: start;
     font-size: 1.65rem;
     font-weight: 700;
     color: #000000;
-    text-decoration: none;
-    transition: color 0.2s;
     display: flex;
     align-items: center;
     gap: 0.6rem;
 }
 
-.logo:hover { color: #2d5016; }
+.logo a {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.logo-home { display: block; }
+.logo-home:hover { transform: scale(1.06); }
+@media (prefers-reduced-motion: reduce) { .logo-home:hover { transform: none; } }
+.logo-tekst:hover { color: #2d5016; }
 
 /* Naam altijd op één regel */
-.logo span { white-space: nowrap; }
+.logo-tekst { white-space: nowrap; }
 
 /* Aardbeitje naast de naam */
 .logo-beeld {
@@ -253,7 +263,7 @@ footer p {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .logo, nav a, .nav-toggle span, .cta-button, .footer-links a { transition: none; }
+    .logo a, nav a, .nav-toggle span, .cta-button, .footer-links a { transition: none; }
 }
 
 /* =========================================================
