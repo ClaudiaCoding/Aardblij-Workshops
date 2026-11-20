@@ -50,7 +50,7 @@ Op basis van wat er op de website staat:
 | Kinderen | Kinderfeestjes bij Verf Therapie: toezicht door ouders of begeleiders. |
 | Schade en vlekken | Zeil en verfpakken worden geregeld, maar verf kan vlekken geven. |
 | Foto's | De kunstenaar maakt sfeerfoto's en een groepsfoto; gebruik op website en social media vraagt **toestemming** (portretrecht en AVG), bij kinderen van een ouder. |
-| Partners | Samenwerking met CandleDelish en de Alpaca Farm in Haaften. |
+| Partners | Samenwerking met CandleDelish en de Alpaca Farm in de Betuwe. |
 | Mallen op maat en logo's | Bij epoxy: 3D-geprinte mallen met het logo van de klant; de klant moet het recht hebben dat logo te gebruiken. |
 | Creaties | Deelnemers nemen hun werk mee; Aardblij is niet aansprakelijk voor breuk of schade daarna. |
 | Privacy | Gegevens uit de formulieren; verwijzing naar een privacyverklaring (die moet ook nog gemaakt worden). |
@@ -140,7 +140,7 @@ Een workshop is een vorm van vrijetijdsbesteding op een vaste datum. Volgens de 
 1. Bij een buitenworkshop beslist Aardblij in overleg met de klant uiterlijk [24 uur] van tevoren of de workshop doorgaat. [Kies: Bij slecht weer wordt de workshop kosteloos verplaatst. / Bij slecht weer gaat de workshop door onder een overkapping of binnen.]
 2. Bij een workshop op locatie zorgt de klant voor een geschikte ruimte (bijvoorbeeld tafels, stoelen, licht, stroom en bij epoxy een goed geventileerde ruimte) en voor de afgesproken toegang en opbouwtijd.
 3. Bij workshops met verf, zoals Verf Therapie, dekt Aardblij de vloer en de omgeving af met zeil en zorgt voor verfpakken. Toch kan er verf terechtkomen buiten het zeil. Aardblij is niet aansprakelijk voor vlekken, tenzij die het gevolg zijn van opzet of grove nalatigheid van Aardblij.
-4. Bij een workshop bij een partner, zoals de Alpaca Farm in Haaften, gelden ook de huisregels van die locatie.
+4. Bij een workshop bij een partner, zoals de Alpaca Farm, gelden ook de huisregels van die locatie.
 
 **Artikel 10 — Veiligheid, gezondheid en minderjarigen**
 
