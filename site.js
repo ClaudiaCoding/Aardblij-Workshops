@@ -21,8 +21,8 @@ window.AARDBLIJ = {
         'Mozaïeken',
         'Bedazzelen',
         'Verf Therapie',
-        'Fotoshoot met Telefoon',
-        'Kerstkransen en Kerststukjes Maken'
+        'Fotoshoot met Telefoon'
+        // 'Kerstkransen en Kerststukjes Maken'  (tijdelijk verborgen; weer aanzetten: haal // weg en zet een komma achter de regel erboven)
     ],
 
     /* Laatste keuze onderaan de lijst */
